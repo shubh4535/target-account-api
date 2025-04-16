@@ -1,11 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
+const cors = require('cors');
 
 const app = express();
 const PORT = 3000;
 const SECRET = 'secret123';
 
+app.use(cors());  
 app.use(bodyParser.json());
 
 let users = [{ username: 'user1', password: 'pass123' }];
